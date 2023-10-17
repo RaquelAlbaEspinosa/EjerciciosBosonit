@@ -1,0 +1,9 @@
+.row {
+    max-width: 100%;
+    margin: 0 !important;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #FAF4FF !important;
+    min-height: 100vh;
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="bgForm" maxHeight="851.0" prefHeight="774.0" prefWidth="1198.0" style="-fx-background-color: #37505C;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lotrfx.views.FormFX">
+   <children>
+      <Pane fx:id="fatherPane" layoutX="311.0" layoutY="35.0" prefHeight="748.0" prefWidth="576.0">
+         <children>
+            <Pane layoutX="14.0" prefHeight="227.0" prefWidth="256.0" style="-fx-border-color: cyan; -fx-background-color: #41BBD9;">
+               <children>
+                  <Label layoutX="22.0" layoutY="23.0" text="Nombre:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="heroName" layoutX="85.0" layoutY="19.0">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="22.0" layoutY="65.0" text="Raza:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="108.0" text="Vida:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="heroLifePoints" layoutX="85.0" layoutY="104.0" />
+                  <Label layoutX="21.0" layoutY="151.0" text="Armadura:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="heroArmor" layoutX="85.0" layoutY="147.0" />
+                  <Button fx:id="addHero" layoutX="85.0" layoutY="185.0" mnemonicParsing="false" onAction="#onClickAddHero" prefHeight="25.0" prefWidth="87.0" text="Añadir">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="heroRace" layoutX="85.0" layoutY="60.0" prefWidth="150.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="306.0" prefHeight="227.0" prefWidth="256.0" style="-fx-border-color: yellow; -fx-background-color: #D52941;">
+               <children>
+                  <Label layoutX="24.0" layoutY="24.0" text="Nombre:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="beastName" layoutX="86.0" layoutY="20.0">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="22.0" layoutY="65.0" text="Raza:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="109.0" text="Vida:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="beastLifePoints" layoutX="86.0" layoutY="105.0" />
+                  <Label layoutX="20.0" layoutY="150.0" text="Armadura:">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="beastArmor" layoutX="86.0" layoutY="146.0" />
+                  <Button fx:id="addBeast" layoutX="85.0" layoutY="184.0" mnemonicParsing="false" onAction="#onClickAddBeast" prefHeight="25.0" prefWidth="87.0" text="Añadir">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="beastRace" layoutX="86.0" layoutY="60.0" prefWidth="150.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="240.0" prefHeight="220.0" prefWidth="256.0" style="-fx-border-color: cyan; -fx-background-color: #41BBD9;">
+               <children>
+                  <ListView fx:id="heroList" layoutX="28.0" layoutY="17.0" prefHeight="150.0" prefWidth="200.0" />
+                  <Button fx:id="heroDown" layoutX="99.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickDownHero" prefHeight="25.0" prefWidth="58.0" text="Bajar">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="heroUp" layoutX="28.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickUpHero" prefHeight="25.0" prefWidth="58.0" text="Subir">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="heroOut" layoutX="169.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickOutHero" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="306.0" layoutY="240.0" prefHeight="220.0" prefWidth="256.0" style="-fx-border-color: yellow; -fx-background-color: #D52941;">
+               <children>
+                  <ListView fx:id="beastList" layoutX="28.0" layoutY="19.0" prefHeight="150.0" prefWidth="200.0" />
+                  <Button fx:id="beastDown" layoutX="99.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickDownBeast" prefHeight="25.0" prefWidth="58.0" text="Bajar">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="beastUp" layoutX="28.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickUpBeast" prefHeight="25.0" prefWidth="58.0" text="Subir">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="beastOut" layoutX="169.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickOutBeast" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutY="469.0" prefHeight="291.0" prefWidth="579.0">
+               <children>
+                  <TextArea fx:id="fightText" layoutX="14.0" layoutY="49.0" prefHeight="227.0" prefWidth="551.0" />
+                  <Button fx:id="fightButton" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#onClickFight" prefHeight="25.0" prefWidth="551.0" style="-fx-background-color: #990D35;" text="¡LUCHA!" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+   </padding>
+</AnchorPane>
