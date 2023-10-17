@@ -89,7 +89,7 @@ public class FormFX {
                 "-fx-background-repeat: no-repeat;" +
                 "-fx-background-size: cover;");
 
-        fightText.setStyle("-fx-alignment: center;");
+        fightText.setStyle("-fx-text-alignment: center;");
     }
     @FXML
     public void onClickAddHero () {
@@ -211,7 +211,20 @@ public class FormFX {
                         Thread.currentThread().interrupt();
                     }
 
-                    Platform.runLater(() -> fightText.appendText(linea + "\n"));
+                    Platform.runLater(() -> {
+                        fightText.appendText(linea + "\n");
+                        if(linea.equals("¡¡Los héroes ganan!!.\nLanza el Anillo Único al fuego del Monte del Destino.")) {
+                            backgroundImage = new Image(Objects.requireNonNull(getClass().getResource("/heroesWin.gif")).toExternalForm());
+                            bgForm.setStyle("-fx-background-image: url('" + backgroundImage.getUrl() + "');" +
+                                    "-fx-background-repeat: no-repeat;" +
+                                    "-fx-background-size: cover;");
+                        } else if (linea.equals("¡¡Las bestias ganan!!.\nSauron ha recuperado el Anillo Único y, con él, su poder.")) {
+                            backgroundImage = new Image(Objects.requireNonNull(getClass().getResource("/beastsWin.gif")).toExternalForm());
+                            bgForm.setStyle("-fx-background-image: url('" + backgroundImage.getUrl() + "');" +
+                                    "-fx-background-repeat: no-repeat;" +
+                                    "-fx-background-size: cover;");
+                        }
+                    });
                 }
                 return null;
             }

@@ -5,7 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import java.net.URL?>
 <AnchorPane fx:id="bgForm" maxHeight="851.0" prefHeight="774.0" prefWidth="1198.0" style="-fx-background-color: #37505C;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lotrfx.views.FormFX">
+   <stylesheets>
+      <URL value="@formFXScene.css" />
+   </stylesheets>
    <children>
       <Pane fx:id="fatherPane" layoutX="311.0" layoutY="35.0" prefHeight="748.0" prefWidth="576.0">
          <children>
@@ -125,7 +129,10 @@
             </Pane>
             <Pane layoutY="469.0" prefHeight="291.0" prefWidth="579.0">
                <children>
-                  <TextArea fx:id="fightText" layoutX="14.0" layoutY="49.0" prefHeight="227.0" prefWidth="551.0" />
+                  <TextArea fx:id="fightText" layoutX="14.0" layoutY="49.0" prefHeight="227.0" prefWidth="551.0" styleClass="centeredTextArea">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font></TextArea>
                   <Button fx:id="fightButton" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#onClickFight" prefHeight="25.0" prefWidth="551.0" style="-fx-background-color: #990D35;" text="¡LUCHA!" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="15.0" />
